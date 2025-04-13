@@ -95,6 +95,10 @@
             color: var(--dark-color);
             position: relative;
             padding-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         h2::after {
@@ -105,6 +109,11 @@
             width: 60px;
             height: 3px;
             background-color: var(--primary-color);
+        }
+        
+        h2 .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
         }
         
         .projects-grid {
@@ -160,6 +169,18 @@
         
         .skills-list {
             list-style-type: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .skills-list.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+        
+        .skills-list.expanded {
+            max-height: 500px;
+            opacity: 1;
         }
         
         .skill-item {
@@ -272,8 +293,11 @@
         </section>
         
         <section class="skills">
-            <h2 class="animated">Skills</h2>
-            <ul class="skills-list">
+            <h2 class="animated" id="skills-toggle">
+                Skills
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </h2>
+            <ul class="skills-list expanded">
                 <li class="skill-item animated delay-1">
                     <span class="skill-name">HTML</span>
                     <div class="skill-bar">
@@ -309,7 +333,6 @@
     </div>
 
     <script>
-        // Simple JavaScript for any interactive elements
         document.addEventListener('DOMContentLoaded', function() {
             // Add smooth scrolling to all links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -332,6 +355,25 @@
             
             document.querySelectorAll('section, .project-card, .skill-item').forEach(el => {
                 observer.observe(el);
+            });
+
+            // Skills section toggle functionality
+            const skillsToggle = document.getElementById('skills-toggle');
+            const skillsList = document.querySelector('.skills-list');
+            const toggleIcon = skillsToggle.querySelector('.toggle-icon');
+
+            skillsToggle.addEventListener('click', function() {
+                skillsList.classList.toggle('collapsed');
+                skillsList.classList.toggle('expanded');
+                
+                // Toggle the icon
+                if (skillsList.classList.contains('collapsed')) {
+                    toggleIcon.classList.remove('fa-chevron-down');
+                    toggleIcon.classList.add('fa-chevron-up');
+                } else {
+                    toggleIcon.classList.remove('fa-chevron-up');
+                    toggleIcon.classList.add('fa-chevron-down');
+                }
             });
         });
     </script>

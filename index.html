@@ -158,19 +158,34 @@
             transform: translateX(3px);
         }
         
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .skills-list {
+            list-style-type: none;
         }
         
-        .skill-tag {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .skill-item {
+            margin-bottom: 0.8rem;
+        }
+        
+        .skill-name {
+            display: inline-block;
+            width: 100px;
             font-weight: 500;
+        }
+        
+        .skill-bar {
+            display: inline-block;
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 200px;
+            margin-left: 1rem;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
         }
         
         @media (max-width: 768px) {
@@ -182,6 +197,10 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 1rem;
+            }
+            
+            .skill-bar {
+                width: 150px;
             }
         }
         
@@ -211,13 +230,13 @@
             </div>
             
             <div class="social-links">
-                <a href="https://github.com/yourusername" class="social-link animated delay-1" target="_blank">
+                <a href="https://github.com/DylanKuss" class="social-link animated delay-1" target="_blank">
                     <i class="fab fa-github"></i>GitHub
                 </a>
-                <a href="https://linkedin.com/in/yourusername" class="social-link animated delay-2" target="_blank">
+                <a href="https://www.linkedin.com/in/dylan-kuss-2a3577325/" class="social-link animated delay-2" target="_blank">
                     <i class="fab fa-linkedin"></i>LinkedIn
                 </a>
-                <a href="mailto:your.email@example.com" class="social-link animated delay-3" target="_blank">
+                <a href="mailto:dylan.kuss@yahoo.com" class="social-link animated delay-3" target="_blank">
                     <i class="fas fa-envelope"></i>Email Me
                 </a>
             </div>
@@ -227,25 +246,25 @@
             <h2 class="animated">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card animated delay-1">
-                    <h3 class="project-title">Project 1</h3>
-                    <p class="project-description">A responsive portfolio website built with HTML, CSS, and JavaScript showcasing my web development projects.</p>
-                    <a href="https://github.com/yourusername/project1" class="project-link" target="_blank">
+                    <h3 class="project-title">To-Do List App</h3>
+                    <p class="project-description">A responsive task management application built with React and Firebase, featuring real-time updates, user authentication, and cloud data storage for persistent to-do lists across devices.</p>
+                    <a href="https://github.com/DylanKuss/todo-app" class="project-link" target="_blank">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
                 
                 <div class="project-card animated delay-2">
-                    <h3 class="project-title">Project 2</h3>
-                    <p class="project-description">An interactive JavaScript game that demonstrates my DOM manipulation skills.</p>
-                    <a href="https://github.com/yourusername/project2" class="project-link" target="_blank">
+                    <h3 class="project-title">Personal Blog Website</h3>
+                    <p class="project-description">A custom-designed blog platform created with HTML, CSS, and JavaScript, featuring responsive layouts, dark mode toggle, and dynamic content loading without page refreshes.</p>
+                    <a href="https://github.com/DylanKuss/personal-blog" class="project-link" target="_blank">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
                 
                 <div class="project-card animated delay-3">
-                    <h3 class="project-title">Project 3</h3>
-                    <p class="project-description">A CSS framework exploration project comparing different styling approaches.</p>
-                    <a href="https://github.com/yourusername/project3" class="project-link" target="_blank">
+                    <h3 class="project-title">Weather Application</h3>
+                    <p class="project-description">An interactive weather dashboard using the OpenWeather API with JavaScript, displaying current conditions, 5-day forecasts, and location-based weather data with a clean UI.</p>
+                    <a href="https://github.com/DylanKuss/weather-app" class="project-link" target="_blank">
                         View on GitHub <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -254,17 +273,38 @@
         
         <section class="skills">
             <h2 class="animated">Skills</h2>
-            <div class="skills-container">
-                <span class="skill-tag animated delay-1">HTML</span>
-                <span class="skill-tag animated delay-1">CSS</span>
-                <span class="skill-tag animated delay-1">JavaScript</span>
-                <span class="skill-tag animated delay-2">Python</span>
-                <span class="skill-tag animated delay-2">Java</span>
-                <span class="skill-tag animated delay-2">React</span>
-                <span class="skill-tag animated delay-3">Node.js</span>
-                <span class="skill-tag animated delay-3">Tailwind CSS</span>
-                <span class="skill-tag animated delay-3">Docker</span>
-            </div>
+            <ul class="skills-list">
+                <li class="skill-item animated delay-1">
+                    <span class="skill-name">HTML</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </li>
+                <li class="skill-item animated delay-2">
+                    <span class="skill-name">CSS</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </li>
+                <li class="skill-item animated delay-1">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%"></div>
+                    </div>
+                </li>
+                <li class="skill-item animated delay-2">
+                    <span class="skill-name">Git</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 55%"></div>
+                    </div>
+                </li>
+                <li class="skill-item animated delay-3">
+                    <span class="skill-name">Node.js</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 25%"></div>
+                    </div>
+                </li>
+            </ul>
         </section>
     </div>
 
@@ -290,7 +330,7 @@
                 });
             }, { threshold: 0.1 });
             
-            document.querySelectorAll('section, .project-card, .skill-tag').forEach(el => {
+            document.querySelectorAll('section, .project-card, .skill-item').forEach(el => {
                 observer.observe(el);
             });
         });

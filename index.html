@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrupad - Software Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+        
+        .social-link i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .project-description {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+        }
+        
+        .project-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: var(--dark-color);
+        }
+        
+        .project-link i {
+            margin-left: 0.3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-link:hover i {
+            transform: translateX(3px);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+        
+        /* Animation for elements */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="animated">Hi, I'm Dhrupad</h1>
+            <p class="tagline animated delay-1">Software Developer | Cybersecurity Enthusiast | Builder of Clean & Secure Code</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/yourusername" class="social-link animated delay-1" target="_blank">
+                    <i class="fab fa-github"></i>GitHub
+                </a>
+                <a href="https://linkedin.com/in/yourusername" class="social-link animated delay-2" target="_blank">
+                    <i class="fab fa-linkedin"></i>LinkedIn
+                </a>
+                <a href="mailto:your.email@example.com" class="social-link animated delay-3" target="_blank">
+                    <i class="fas fa-envelope"></i>Email Me
+                </a>
+            </div>
+        </header>
+        
+        <section class="projects">
+            <h2 class="animated">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card animated delay-1">
+                    <h3 class="project-title">Project 1</h3>
+                    <p class="project-description">A description of your project goes here. Explain what it does, the technologies used, and any notable achievements.</p>
+                    <a href="https://github.com/yourusername/project1" class="project-link" target="_blank">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="project-card animated delay-2">
+                    <h3 class="project-title">Project 2</h3>
+                    <p class="project-description">A description of your project goes here. Explain what it does, the technologies used, and any notable achievements.</p>
+                    <a href="https://github.com/yourusername/project2" class="project-link" target="_blank">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="project-card animated delay-3">
+                    <h3 class="project-title">Project 3</h3>
+                    <p class="project-description">A description of your project goes here. Explain what it does, the technologies used, and any notable achievements.</p>
+                    <a href="https://github.com/yourusername/project3" class="project-link" target="_blank">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="skills">
+            <h2 class="animated">Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag animated delay-1">React</span>
+                <span class="skill-tag animated delay-1">Node.js</span>
+                <span class="skill-tag animated delay-2">Rust</span>
+                <span class="skill-tag animated delay-2">Python</span>
+                <span class="skill-tag animated delay-3">Tailwind CSS</span>
+                <span class="skill-tag animated delay-3">Docker</span>
+                <span class="skill-tag animated delay-3">Next.js</span>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Simple JavaScript for any interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Add animation class to elements when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('section, .project-card, .skill-tag').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
